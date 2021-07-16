@@ -1,0 +1,54 @@
+$fontBody: 'Montserrat', sans-serif;
+$fontHeading: 'Libre Baskerville', serif;
+$primaryColor:#5A574F;
+$whiteColor:#ffffff;
+$btnhoverColor:#544633;
+$overlayBg:  rgba(79, 31, 17, 0.7);
+$Bg:#181616;
+$cardBg:#262222;
+$themeColor:#ab9574;
+%btn-my{
+    background-color: $themeColor;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    color: $whiteColor;
+    font-size: 1.8rem;
+    &:hover{
+        background-color: $btnhoverColor; 
+    }
+}
+
+@mixin overlay ($left,$top,$bg-color,$width,$hight) {
+    position: absolute;
+    left: $left;
+    top: $top;
+    background-color: $bg-color;
+    width: $width;
+    height: $hight;
+    content: "";
+}
+
+@mixin transition($time){
+    -webkit-transition: $time all ease-in-out;
+     -o-transition: $time all ease-in-out;
+     transition: $time all ease-in-out;
+} 
+
+@mixin transform($form) {
+    -webkit-transform:$form ;
+         -ms-transform:$form ;
+             transform:$form ;
+}
+%hidden {
+    visibility: hidden;
+    opacity: 0;
+    @include transition(.4s);
+    @include transform(scaleY(0));
+    transform-origin: top;
+}
+%open{
+    visibility: visible;
+    opacity: 1;
+    @include transform(scaleY(1));
+}

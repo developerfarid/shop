@@ -1,0 +1,997 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@300;400;500&display=swap");
+@import "var";
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+body {
+  font-size: 1.6rem;
+  font-family: $fontBody;
+  background: $Bg;
+  color: $primaryColor;
+}
+.sptb {
+  padding: 100px 0;
+}
+.sp {
+  padding: 0 100px;
+}
+.spt {
+  padding-top: 100px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $fontHeading;
+  color: $themeColor;
+}
+h1 {
+  font-size: 3.2rem;
+}
+h2 {
+  font-size: 4rem;
+}
+h3 {
+  font-size: 3.5rem;
+}
+h4 {
+  font-size: 3rem;
+}
+h5 {
+  font-size: 2rem;
+}
+p {
+  line-height: 2;
+}
+a {
+  text-decoration: none;
+  text-transform: capitalize;
+  cursor: pointer;
+  color: inherit;
+  &:hover {
+    color: inherit;
+  }
+}
+ul {
+  padding-left: 0;
+}
+.slider.owl-carousel .owl-dots.disabled,
+.slider.owl-carousel .owl-nav.disabled {
+  display: none !important;
+}
+button,
+button:hover,
+button:focus,
+select,
+select:hover,
+select:focus {
+  outline: 0;
+  border: none;
+}
+header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 111111;
+}
+
+.main li {
+  padding: 0 20px;
+  a {
+    color: $whiteColor;
+    @include transition(0.3s);
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  .newmenu {
+    width: 200px;
+    left: 50%;
+    top: 150%;
+    position: absolute;
+    background-color: $cardBg;
+    padding: 2rem 3rem;
+    @extend %hidden;
+    border-bottom: 3px solid $themeColor;
+    li {
+      line-height: 2;
+      border-bottom: 1px solid white;
+      padding-left: 0;
+    }
+  }
+  &:hover .newmenu {
+    @extend %open;
+  }
+  .megamenu {
+    width: 100%;
+    left: 0;
+    top: 150%;
+    position: absolute;
+    background-color: $cardBg;
+    padding: 3rem 2rem;
+    @extend %hidden;
+    border-bottom: 3px solid $themeColor;
+
+    .wid {
+      width: 21.66%;
+      float: left;
+      ul {
+        h5 {
+          margin-bottom: 2rem;
+          a {
+            color: $themeColor;
+          }
+        }
+        li {
+          line-height: 2;
+          padding-left: 0;
+          margin-right: 10px;
+          border-bottom: 1px solid white;
+        }
+      }
+    }
+    .wid-2 {
+      width: 35%;
+      float: left;
+      height: 100%;
+      .hif {
+        width: 50%;
+        float: left;
+        img {
+          height: 50%;
+          object-fit: cover;
+          padding: 0 4px 4px 0;
+        }
+      }
+      .ful {
+        height: 100%;
+        width: 50%;
+        float: left;
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    img {
+      width: 100%;
+    }
+  }
+  &:hover .megamenu {
+    @extend %open;
+  }
+}
+.market {
+  select {
+    margin-left: 15px;
+    text-transform: uppercase;
+
+    color: black;
+    option {
+      color: $Bg;
+    }
+  }
+  i {
+    color: $whiteColor;
+    padding-left: 15px;
+    @include transition(0.3s);
+    &.fa-user .ne {
+      width: 200px;
+      right: 0;
+      top: 150%;
+      position: absolute;
+      background-color: $whiteColor;
+      padding: 2rem 3rem;
+      @extend %hidden;
+      list-style-type: none;
+
+      li {
+        line-height: 2;
+        float: left;
+        a {
+          color: black;
+          text-align: start;
+        }
+      }
+    }
+    &:hover .ne {
+      @extend %open;
+    }
+    .search {
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      left: 0;
+      top: 0;
+      clip-path: circle(0% at 100% 0%);
+      @include transition(0.4s);
+      background-color: rgba(255, 255, 255, 0.699);
+      &.active {
+        clip-path: circle(150%);
+      }
+      &.activ {
+        clip-path: circle(0% at 100% 0%);
+      }
+      .fa-times {
+        position: inherit;
+        right: 3rem;
+        top: 3rem;
+        font-size: 3rem;
+        z-index: 111;
+        cursor: pointer;
+      }
+      input {
+        background-color: transparent;
+        outline: 0;
+        border: none;
+        position: inherit;
+        font-size: 10rem;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 500px;
+        border-bottom: 1px solid rgb(255, 255, 255);
+      }
+    }
+    &:hover .div {
+      @extend %open;
+    }
+    &:hover span {
+      background-color: $themeColor;
+    }
+  }
+
+  span {
+    position: absolute;
+    left: 15px;
+    top: -20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: black;
+    display: block;
+    text-align: center;
+    line-height: 20px;
+  }
+  .div {
+    position: absolute;
+    right: 0;
+    top: 150%;
+    width: 250px;
+    background: $whiteColor;
+    text-align: center;
+    padding: 20px;
+    @extend %hidden;
+    color: black;
+  }
+}
+#open {
+  display: none;
+}
+.hero {
+  padding: 0;
+  .item {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100% !important;
+    padding: 0 !important;
+    .text {
+      vertical-align: middle;
+      height: 100vh;
+      animation: top 1s ease-in-out 0.2s 1;
+      p {
+        display: inline-block;
+        background-color: #303030;
+        color: $whiteColor;
+        padding: 7px 15px;
+        border-radius: 2px;
+        margin-bottom: 1.5rem;
+      }
+      h1 {
+        color: $themeColor;
+        span {
+          color: $whiteColor;
+          font-size: 7rem;
+        }
+        span:last-child {
+          font-size: 4.5rem;
+        }
+      }
+      button {
+        @extend %btn-my;
+        @include transition(0.4s);
+        margin-top: 1rem;
+      }
+    }
+  }
+  // @keyframes top {
+  //     0%{
+  //         transform: translateY(100px);
+  //     }
+  //     100%{
+  //         transform: translateY(0px);
+  //     }
+  // }
+  .item-1 {
+    background-image: url(../img/slider--2_2000x-min.jpg);
+  }
+  .item-2 {
+    background-image: url(../img/slider--1_2000x-min.jpg);
+  }
+  .item-3 {
+    background-image: url(../img/slider--3_2000x-min.jpg);
+    .text {
+      width: 700px;
+      background-color: rgba(0, 0, 0, 0.541);
+    }
+  }
+}
+
+// about section
+.about {
+  margin-top: -23px !important;
+}
+.about-text {
+  p {
+    margin: 30px 0 30px 0;
+    line-height: 2;
+  }
+  button {
+    @extend %btn-my;
+  }
+}
+.about-img {
+  position: relative;
+  overflow: hidden;
+  &::after {
+    @include overlay(200%, 0, $overlayBg, 170%, 100%);
+    @include transition(0.5s);
+    @include transform(skewX(36deg));
+  }
+  &:hover::after {
+    left: -30%;
+  }
+  
+}
+
+// shop
+.sop {
+  background-color: $cardBg;
+}
+.tittle {
+  span i {
+    font-size: 2rem;
+    margin-top: 1rem;
+    color: $themeColor;
+  }
+}
+.shop-item {
+  position: relative;
+  padding: 0 10rem 5rem 0rem;
+  text-align: right;
+  h5 {
+    margin-bottom: 2.5rem;
+  }
+  img {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+img {
+  max-width: 100%;
+}
+.shop-item-2 {
+  @extend .shop-item;
+  padding: 0 0 5rem 10rem;
+  text-align: left;
+  img {
+    left: 0;
+  }
+}
+
+// img-section
+.img-section {
+  .container-fluid .row {
+    --bs-gutter-x: 0rem;
+  }
+  .img-over {
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    z-index: 1;
+    @include transition(0.5s);
+    background-size: cover;
+    &::after {
+      @include overlay(0, 0, transparent, 100%, 100%);
+      background: linear-gradient(
+        to bottom,
+        transparent 30%,
+        rgba(24, 22, 22, 0.8) 100%
+      );
+
+      z-index: -1;
+    }
+    &:hover::after {
+      background: linear-gradient(
+        to bottom,
+        transparent 30%,
+        rgba(84, 70, 51, 0.9) 100%
+      );
+    }
+    &:hover {
+      background-size: 150% 150%;
+      background-position: center;
+      transition: 0.3s;
+    }
+    .img-text {
+      position: absolute;
+      bottom: 5rem;
+      left: 2rem;
+      p,
+      a {
+        color: $whiteColor;
+        margin-top: 1rem;
+      }
+    }
+  }
+  .img-1 {
+    background: url(../img/img-3_b4a150a5-1a9b-4649-8248-ef790f18a40d_475X-min.jpg)
+      no-repeat center;
+    background-size: cover;
+    transition: 0.3s;
+  }
+  .img-2 {
+    background: url(../img/img-4_b1cc4915-437f-463f-926b-9653fe8da203_1920X.webp)
+      no-repeat center;
+    background-size: cover;
+    transition: 0.3s;
+  }
+  .img-3 {
+    background: url(../img/img-5_d5244a70-1950-4cfa-85e7-4d8320ffb3a2_1920X.webp)
+      no-repeat center;
+    background-size: cover;
+  }
+  .img-4 {
+    background: url(../img/img-6_1920X.webp) no-repeat center;
+    background-size: cover;
+  }
+  .img-5 {
+    background: url(../img/img-7_640e6240-0873-408b-a42a-d66c5f34bd93_1920X.webp)
+      no-repeat center;
+    background-size: cover;
+  }
+  .hi {
+    height: 100vh;
+  }
+  .hi-2 {
+    height: 50vh;
+  }
+}
+.card {
+  position: relative;
+  @include transition(0.3s);
+  .card-body {
+    padding: 2.5rem 0 !important;
+    h5 a {
+      color: $themeColor;
+      @include transition(0.3s);
+      &:hover {
+        color: $Bg;
+      }
+    }
+  }
+  &:hover .social-overlay {
+    visibility: visible;
+    opacity: 1;
+    @include transform(translate(0, 0));
+  }
+  .social-overlay {
+    position: absolute;
+    right: 5rem;
+    top: 5rem;
+    @include transform(translate(-5rem, 5rem));
+    visibility: hidden;
+    opacity: 0;
+    @include transition(0.4s);
+    ul {
+      list-style-type: none;
+      li {
+        line-height: 2;
+        width: 4rem;
+        height: 4rem;
+        background-color: $themeColor;
+        border-radius: 50%;
+        margin-bottom: 1rem;
+        text-align: center;
+        line-height: 4rem;
+        @include transition(0.4s);
+        a {
+          font-size: 2rem;
+          color: $whiteColor;
+          display: block;
+        }
+        &:hover {
+          background-color: $Bg;
+        }
+      }
+    }
+  }
+}
+
+.other {
+  background-color: $cardBg;
+}
+.other-item {
+  margin: 3rem 0;
+  @include transition(0.3s);
+  img {
+    display: block;
+    margin: auto;
+    @include transition(0.3s);
+  }
+  h5 {
+    display: inline-block;
+    position: relative;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    padding: 3rem 0 2rem 0;
+    &::after {
+      @include overlay(50%, 94%, $whiteColor, 1rem, 1rem);
+      border-radius: 50%;
+      @include transition(0.3s);
+    }
+    &::before {
+      @include overlay(50%, 94%, $whiteColor, 1rem, 1rem);
+      border-radius: 50%;
+      @include transition(0.3s);
+    }
+  }
+  p {
+    margin-top: 2rem;
+  }
+  &:hover h5::before {
+    left: 100% !important;
+  }
+  &:hover h5::after {
+    left: 0 !important;
+  }
+  &:hover img {
+    @include transform(rotateY(180deg));
+  }
+}
+.card {
+  position: relative;
+  @include transition(0.4s);
+  margin-top: 40px;
+  .arrival {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: center;
+    @include transition(0.4s);
+  }
+  &:hover .arrival {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  .card-body span {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    border-radius: 50%;
+    cursor: pointer;
+    &#one {
+      background-color: brown;
+    }
+    &#two {
+      background-color: rgb(0, 0, 0);
+    }
+  }
+}
+.owl-carousel .owl-dots.disabled,
+.owl-carousel .owl-nav.disabled {
+  display: block;
+}
+
+.slider-2.owl-carousel .owl-nav button.owl-next {
+  position: absolute;
+  right: -80px;
+  top: 50%;
+  @include transform(translateY(-50%));
+  span {
+    background-color: $themeColor;
+    color: black;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: inline-block;
+    line-height: 50px;
+    font-size: 0rem;
+    @include transition(0.4s);
+    &::after {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f061";
+      font-size: 2rem;
+    }
+    &:hover,
+    &:focus {
+      background-color: $cardBg;
+      color: $whiteColor;
+    }
+  }
+}
+.slider-2.owl-carousel .owl-nav button.owl-prev {
+  position: absolute;
+  left: -80px;
+  top: 50%;
+  @include transform(translateY(-50%));
+  span {
+    background-color: $themeColor;
+    color: black;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: inline-block;
+    line-height: 50px;
+    font-size: 0rem;
+    @include transition(0.4s);
+    &::after {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f060";
+      font-size: 2rem;
+    }
+    &:hover,
+    &:focus {
+      background-color: $cardBg;
+      color: $whiteColor;
+    }
+  }
+}
+.testimonials {
+  background-color: $cardBg;
+  .slider-text {
+    padding: 50px 150px 0 150px;
+    img {
+      border-radius: 50%;
+      width: 15%;
+      margin: 20px auto;
+    }
+  }
+}
+.slider-3.owl-carousel .owl-nav button.owl-next {
+  position: absolute;
+  right: -80px;
+  top: 50%;
+  @include transform(translateY(-50%));
+  span {
+    font-size: 0rem;
+    &::after {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f061";
+      font-size: 3rem;
+      color: $whiteColor;
+    }
+    &:hover,
+    &:focus {
+      opacity: 0.8;
+    }
+  }
+}
+.slider-3.owl-carousel .owl-nav button.owl-prev {
+  position: absolute;
+  left: -80px;
+  top: 50%;
+  @include transform(translateY(-50%));
+  span {
+    font-size: 0rem;
+    &::after {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f060";
+      font-size: 3rem;
+      color: $whiteColor;
+    }
+    &:hover,
+    &:focus {
+      opacity: 0.8;
+    }
+  }
+}
+.slider-3.owl-carousel button.owl-dot {
+  position: absolute;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+  bottom: 0;
+}
+.slider-3.owl-carousel button.owl-dot.active span {
+  position: absolute;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+  bottom: 0;
+  margin-left: 10px;
+}
+
+// discound
+.discount {
+  background: url(../img/img-8_447ce9d1-c525-432b-ba9c-87b2e85ca3d3_1920X-min.jpg)
+    no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  &-text {
+    color: $whiteColor;
+    h3 {
+      color: $whiteColor;
+      line-height: 1.7;
+    }
+    p {
+      font-weight: 500;
+      margin: 2rem 0;
+    }
+    button {
+      @extend %btn-my;
+    }
+  }
+}
+
+// journal-box
+.journal-box {
+  margin-top: 3rem;
+  @include transition(0.4s);
+  .img-box {
+    position: relative;
+    img {
+      width: 100%;
+    }
+    &::after {
+      @include overlay(0, 0, #0000006e, 100%, 100%);
+      @include transition(0.4s);
+    }
+    &::before {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      right: 0 !important;
+      bottom: 0 !important;
+      content: "";
+      // top: auto;
+      z-index: 1;
+      background-color: #0000006e;
+      @include transition(0.4s);
+    }
+  }
+  &:hover .img-box::before {
+    width: 0;
+    height: 0;
+  }
+  &:hover .img-box::after {
+    width: 0;
+    height: 0;
+  }
+  .journal-text {
+    padding: 4rem;
+    span {
+      padding-bottom: 1rem;
+      display: block;
+    }
+    h5 {
+      @include transition(0.4s);
+      cursor: pointer;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+.journal {
+  button {
+    @extend %btn-my;
+    display: block;
+    margin: auto;
+  }
+}
+// form-section
+.form-section {
+  background-color: $cardBg;
+  form {
+    margin-top: 5rem;
+  }
+}
+
+input[type="email"],
+input[type="submit"] {
+  background: transparent;
+  padding: 10px 20px;
+  outline: 0;
+  border: 0;
+  color: $whiteColor;
+  width: 100%;
+  border-bottom: 1px solid white;
+}
+input[type="email"]:focus,
+input[type="submit"]:focus {
+  background: $themeColor;
+
+  outline: 0;
+  border: 0;
+}
+::placeholder {
+  color: $whiteColor;
+}
+.company {
+  img {
+    cursor: pointer;
+  }
+}
+.main-box {
+  position: relative;
+  @include transition(0.4s);
+  overflow: hidden;
+  img {
+    @include transition(0.4s);
+  }
+
+  &::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 70%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.452);
+    content: "";
+    z-index: 1;
+    opacity: 0;
+    margin: auto;
+    @include transition(0.4s);
+  }
+  &:hover::after {
+    opacity: 1;
+    width: 100%;
+  }
+  &:hover img {
+    filter: blur(8px);
+    @include transform(scale(1.2));
+  }
+  .main-text {
+    position: absolute;
+    top: 50%;
+    width: 75%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+
+    @include transform(translateY(-50%) scale(1.2));
+    @include transition(0.4s);
+    visibility: hidden;
+    opacity: 0;
+    z-index: 2;
+    h5,
+    p {
+      color: $whiteColor;
+    }
+    button {
+      @extend %btn-my;
+    }
+  }
+  &:hover .main-text {
+    visibility: visible;
+    opacity: 1;
+    @include transform(translateY(-50%) scale(1));
+  }
+}
+ul {
+  list-style-type: none;
+}
+.footer-item-1 {
+  i {
+    padding-right: 1rem;
+    margin-top: 1.5rem;
+  }
+}
+.footer-item-2,
+.footer-item-3 {
+  h5 {
+    margin-bottom: 1.5rem;
+  }
+  ul li {
+    line-height: 2;
+    a {
+      color: $primaryColor;
+      @include transition(0.4s);
+      &:hover {
+        color: $themeColor;
+      }
+    }
+  }
+}
+.last {
+  a {
+    padding: 0 1rem;
+    border-right: 1px solid $themeColor;
+    &:last-child {
+      border: none;
+    }
+  }
+}
+#top {
+  text-align: center;
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  z-index: 100;
+  a {
+    border-radius: 50%;
+    font-size: 2rem;
+    color: $whiteColor;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background-color: $themeColor;
+    display: inline-block;
+  }
+}
+
+
+// responsive css
+@media (max-width:992px) {
+    .slider-2.owl-carousel .owl-nav button.owl-next, .slider-3.owl-carousel .owl-nav button.owl-next {
+        right: 10px;
+    }
+    .slider-2.owl-carousel .owl-nav button.owl-prev, .slider-3.owl-carousel .owl-nav button.owl-prev {
+        left: 10px;
+    }
+    .testimonials .slider-text {
+          padding: 40px 100px 0 100px;
+         
+        }
+      
+}
+@media (max-width:776px) {
+    
+    .testimonials .slider-text {
+          padding: 30px 50px 0 50px;
+         
+        }
+    .sp {
+        padding: 0 50px;
+        }
+    .about {
+        margin-top: 25px !important;
+    }
+      
+}
+@media (max-width:420px) {
+    
+    .testimonials .slider-text {
+          padding: 20px 30px 0 30px;
+         
+        }
+    .sp {
+        padding: 0 50px;
+        }
+        .hero .item .text h1 span {
+            color: #ffffff;
+            font-size: 4rem;
+        }
+      
+}
