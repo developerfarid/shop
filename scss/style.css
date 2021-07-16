@@ -1158,14 +1158,22 @@ ul {
 }
 
 @media (max-width: 992px) {
-  .slider-2.owl-carousel .owl-nav button.owl-next, .slider-3.owl-carousel .owl-nav button.owl-next {
+  .slider-2.owl-carousel .owl-nav button.owl-next,
+  .slider-3.owl-carousel .owl-nav button.owl-next {
     right: 10px;
   }
-  .slider-2.owl-carousel .owl-nav button.owl-prev, .slider-3.owl-carousel .owl-nav button.owl-prev {
+  .slider-2.owl-carousel .owl-nav button.owl-prev,
+  .slider-3.owl-carousel .owl-nav button.owl-prev {
     left: 10px;
   }
   .testimonials .slider-text {
     padding: 40px 100px 0 100px;
+  }
+  .market {
+    display: none;
+  }
+  .newmenu {
+    display: none;
   }
 }
 
@@ -1191,6 +1199,9 @@ ul {
   .hero .item .text h1 span {
     color: #ffffff;
     font-size: 4rem;
+  }
+  .main {
+    display: none !important;
   }
 }
 /*# sourceMappingURL=style.css.map */
